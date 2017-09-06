@@ -22,13 +22,12 @@ while j<pn:
     for each in pic_url:
         print(each)
         if re.match(r'(.*?).png',each):
-            print('OKOKOKOK')
             try:
                 pic=requests.get(each,timeout=2)
             except requests.exceptions.ConnectionError:
                 print('[错误]当前图片无法下载')
                 continue
-            except e:
+            except:
                 print('Other exception...')
                 continue
     
